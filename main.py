@@ -1,5 +1,3 @@
-# Personality Prediction System Through CV Analysis
-
 cv_text = input("Paste CV Text:\n").lower()
 
 scores = {
@@ -12,9 +10,9 @@ scores = {
 
 leadership_words = ["leader", "leadership", "managed", "captain", "organized"]
 teamwork_words = ["team", "collaboration", "cooperate", "group"]
-communication_words = ["communication", "presentation", "speaker", "public speaking"]
+communication_words = ["communication", "presentation", "speaker"]
 creativity_words = ["creative", "innovation", "design", "idea"]
-problem_words = ["problem solving", "analysis", "analytical", "debugging", "research"]
+problem_words = ["problem solving", "analysis", "analytical", "research"]
 
 for word in leadership_words:
     if word in cv_text:
@@ -36,12 +34,11 @@ for word in problem_words:
     if word in cv_text:
         scores["Problem Solving"] += 1
 
-print("\n===== Personality Analysis Report =====\n")
+print("\n===== Personality Analysis Report =====")
 
 for trait, score in scores.items():
-    print(f"{trait}: {score}/5")
+    print(f"{trait}: {score}")
 
 best_trait = max(scores, key=scores.get)
 
 print("\nDominant Personality Trait:", best_trait)
-print("\nAnalysis Completed Successfully!")
